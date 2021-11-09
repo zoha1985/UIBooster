@@ -19,16 +19,16 @@ const MyModal = (props) => {
                 } */}
             <Modal isOpen={props._isopen}>
                 {/* <h1>modal title{props._isopen.cart.name}</h1> */}
-                {/* <h2>detai</h2> */}
-                {/* <h1>modal title{capital}</h1> */}
+                <h2>deta</h2>
+                {/* <h1>modal title{props.cart.capital}</h1> */}
                 {/* <p>modal paragrpph</p> */}
                 {/* { passModal ? <Button onClick={()=> passModal(false)}>Close</Button> 
                 : <Button onClick={()=> passModal(true)}>Close</Button> } */}
 
                 
       
-                { props.modalIsOpen &&  <Button onClick={()=>props.modalUpdate(true)}> Close </Button> ||
-                <Button onClick={()=>props._modelClose(false)}> Close </Button> } 
+                {/* { props.modalIsOpen &&  <Button onClick={()=>props.modalUpdate(true)}> Close </Button> ||
+                <Button onClick={()=>props._modelClose(false)}> Close </Button> }  */}
             </Modal>
             
         </div>

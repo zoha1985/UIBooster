@@ -10,12 +10,13 @@ const [country, setCountry] = useState([]);
 const [modalIsOpen, setModalIsOpen] = useState(false);
 const [cart, setCart] = useState([])
 
-const [name, setName] = useState()
+
+
 
 // for modal data passing
 
 
-console.log('daffination name', name)
+// console.log('daffination name', name)
 
     useEffect(() => {
         let url ='https://restcountries.com/v3.1/all'
@@ -28,26 +29,28 @@ console.log('daffination name', name)
       }, []);
 
 
-      useEffect(()=>{
-        fetch(`https://jsonplaceholder.typicode.com/${name}`)
-        .then(res => res.json())
-        .then (data => {
-            // let _obj = {
-            //     _isopen: false,
-            //     cart : {
-            //         name: data[0].name.official
-            //     }
-            // };
-            setName(data);
-            // console.log('single data', data[0].name.official)
-        })
-      }, [])
+    //   useEffect(()=>{
+    //     fetch(`https://restcountries.com/v3.1/name/${name}`)
+    //     .then(res => res.json())
+    //     .then (data => {
+    //         // let _obj = {
+    //         //     _isopen: false,
+    //         //     cart : {
+    //         //         name: data[0].name.official
+    //         //     }
+    //         // };
+    //         setName(data);
+    //         console.log('single data name', data)
+    //         // console.log('single data', data[0].name.official)
+    //     })
+    //   }, [])
 
 
 function show (country){
     console.log('show', country)
     const newCart = [cart, country];
         setCart(newCart)
+        // setModalIsOpen(_e);
        
 }
 
@@ -57,28 +60,35 @@ function show (country){
 //     const newPassModal = [modalIsOpen, country];
 //     setModalIsOpen(newPassModal)
 // }
+// function setModelData (_obj)
+// {
+//     setName(_obj);
+//     console.log(_obj);
+// }
 
-function _modelClose(_e){
-    setModalIsOpen(_e);
-}
+// function _modelClose(_e){
+//     setModalIsOpen(_e);
+// }
 
     return (
         <>
             <Container className="mt-5">
                 <Row> 
-                <Cart cart={cart}/>
+                <Cart country={country} cart={cart}/>
+                {/* <Cart _isopen={modalIsOpen} _modelClose={_modelClose}  cart={cart}/> */}
                     <Col md={12} className="d-flex  justify-content-between flex-wrap">
-                        {cart.length}
+                        {/* {cart.length} */}
                         {/* {console.log('value about passModal' , modalIsOpen)} */}
                         {/* {passModal,length} */}
                    {
-                       country.map(country=> <Photo _modelClose={_modelClose} country={country} key={country.name} cart={cart} show={show}/>)
+                       country.map(country=> <Photo  country={country} key={country.cca2} cart={cart} show={show}/>)
+                    //    country.map(country=> <Photo setModelData={setModelData} _modelClose={_modelClose} country={country} key={country.name} cart={cart} show={show}/>)
                    }
                   
 
                  
                 </Col> 
-                <MyModal name={name}  _isopen={modalIsOpen} _modelClose={_modelClose} />   
+                {/* <MyModal show={show} _isopen={modalIsOpen} _modelClose={_modelClose} />    */}
                 </Row>
             </Container> 
             
