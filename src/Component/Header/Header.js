@@ -1,7 +1,7 @@
 import React from 'react';
 import {Navbar,Container,Nav,Row,Col, Button} from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
-import './Header.css'
+import './Header.css';
 
 const Header = () => {
     
@@ -46,10 +46,10 @@ const Header = () => {
                 <Nav.Link href="#bloge"> Blog</Nav.Link>
             </Nav>
             </Container>
-            </Navbar>    
-                </Col>
-                
-            </Row>
+            </Navbar> 
+            
+            </Col>
+        </Row>
         </Container>
      
   </>
